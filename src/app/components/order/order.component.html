@@ -1,0 +1,29 @@
+<!-- <div *ngFor="let topping of toppings" class="row-container">
+    <div class="topping-name">{{getToppingCaption(topping)}}</div>
+    <div *ngFor="let size of sizes">
+        <app-item [size]="size" [topping]="topping"></app-item>
+    </div>
+</div> -->
+<table >
+    <tr>
+        <td class="tab-topping" rowspan="2">
+            Toppings
+        </td>
+        <td class="tab-cap" colspan="4">
+            Pizza Size
+        </td>
+    </tr>
+    <tr>
+        <td class="tab-cap" *ngFor="let size of sizes">
+            {{getSizeCaption(size)}}
+        </td>
+    </tr>
+    <tr *ngFor="let topping of toppings">
+        <td>
+            {{getToppingCaption(topping)}}
+        </td>
+        <td class="tab-col" *ngFor="let size of sizes">
+            <app-item [size]="size" [topping]="topping"></app-item>
+        </td>
+    </tr>
+</table>
