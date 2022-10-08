@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import {environment} from '../../environments/environment';
 import { Size } from "../models/size.model";
 import { Topping } from "../models/topping.model";
-import { Offer } from "../models/offer.model";
-import { Totals } from "../helpers/interfaces";
 
 @Injectable()
 export class OrderService {
@@ -30,4 +28,12 @@ export class OrderService {
         this.toppings = toppings;
     }
 
+    error: string;
+
+    eraseError(): void {
+        setTimeout(() => {
+            this.error = undefined;
+        }, 5000)
+
+    }
 }

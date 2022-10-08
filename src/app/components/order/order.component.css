@@ -28,3 +28,8 @@ td {
 .tab-topping {
     width: 200px;
 }
+
+.error-message {
+    color: red;
+    text-align: center;
+}

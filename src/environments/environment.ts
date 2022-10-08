@@ -16,14 +16,14 @@ export const environment = {
       toppings: [],
       offers: [
         {
-          name: "Offer 1",
-          toppingsCount: 2,
-          value: 5,
-          percent: false,
-        }, {
           name: "Offer 2",
           toppingsCount: 4,
           value: 9,
+          percent: false,
+        },{
+          name: "Offer 1",
+          toppingsCount: 2,
+          value: 5,
           percent: false,
         }
       ],

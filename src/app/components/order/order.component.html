@@ -1,10 +1,9 @@
-<!-- <div *ngFor="let topping of toppings" class="row-container">
-    <div class="topping-name">{{getToppingCaption(topping)}}</div>
-    <div *ngFor="let size of sizes">
-        <app-item [size]="size" [topping]="topping"></app-item>
-    </div>
-</div> -->
-<table >
+<table>
+    <tr *ngIf="orderService.error">
+        <td class="error-message" colspan="5">
+            {{orderService.error}}
+        </td>
+    </tr>
     <tr>
         <td class="tab-topping" rowspan="2">
             Toppings
@@ -24,6 +23,29 @@
         </td>
         <td class="tab-col" *ngFor="let size of sizes">
             <app-item [size]="size" [topping]="topping"></app-item>
+        </td>
+    </tr>
+    <tr>
+        <td>Offer</td>
+        <td class="tab-col" *ngFor="let size of sizes" style="text-align: center">
+            {{getOfferStr(size, getOffer(size))}}
+        </td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td colspan="4" style="text-align: center">${{getTotal()}}</td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <ul>
+                <ol>Offer 1: 1 Medium Pizza with 2 toppings = $5</ol>
+                <ol>Offer 2: 1 Medium Pizza with 4 toppings = $9</ol>
+                <ol>Offer 3: 1 Large Pizza with 4 toppings = -50%
+                </ol>
+                <ol><br></ol>
+                <ol style="font-style: italic">Pepperoni and Barbecue are counted as 2 toppings
+                </ol>
+            </ul>
         </td>
     </tr>
 </table>
